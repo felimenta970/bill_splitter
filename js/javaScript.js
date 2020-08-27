@@ -30,56 +30,13 @@ function adicionaPessoa() {
 
 }
 
-function listaNomesDiv() {
-
-    let div = document.getElementById('nomesParaItens');
-    let aux = numPessoas - 1;
-    br = document.createElement('br');
-
-    let checkbox = document.createElement('input');
-
-    checkbox.type = 'checkbox';
-    checkbox.name = 'nome' + aux;
-    checkbox.value = pessoas[numPessoas-1].nome;
-    checkbox.id = 'nome' + aux;
-
-    let label = document.createElement('label');
-    label.htmlFor = 'nome' + aux;
-    label.appendChild(document.createTextNode(pessoas[numPessoas-1].nome));
-
-    div.appendChild(checkbox);
-    div.appendChild(label);
-    div.appendChild(br);
-}
-
-function listaNomesGorjeta() {
-    let div = document.getElementById('nomesParaGorjeta');
-    let aux = numPessoas - 1;
-    br = document.createElement('br');
-
-    let checkbox = document.createElement('input');
-
-    checkbox.type = 'checkbox';
-    checkbox.name = 'nome' + aux;
-    checkbox.value = pessoas[numPessoas-1].nome;
-    checkbox.classList.add('gorjeta');
-
-    let label = document.createElement('label');
-    label.htmlFor = 'nome' + aux;
-    label.appendChild(document.createTextNode(pessoas[numPessoas-1].nome));
-
-    div.appendChild(checkbox);
-    div.appendChild(label);
-    div.appendChild(br);
-}
-
 function adicionarItem() {
     
     let cont = 0;
 
     let item = {
         nome: document.getElementById('item').value,
-        valor: document.getElementById('preco' + numItens).value
+        valor: document.getElementById('preco').value
     }
 
     let nomes = [];
@@ -112,6 +69,64 @@ function adicionarItem() {
     aviso.innerHTML = item.nome + " adicionado com sucesso!";
 
     div.appendChild(aviso);
+}
+
+function listaNomesDiv() {
+
+    let div = document.getElementById('nomesParaItens');
+    let aux = numPessoas - 1;
+    br = document.createElement('br');
+
+    let checkbox = document.createElement('input');
+
+    checkbox.type = 'checkbox';
+    checkbox.name = 'nome' + aux;
+    checkbox.value = pessoas[numPessoas-1].nome;
+    checkbox.id = 'nomesItens';
+
+    let label = document.createElement('label');
+    label.htmlFor = 'nome' + aux;
+    label.appendChild(document.createTextNode(pessoas[numPessoas-1].nome));
+
+    div.appendChild(checkbox);
+    div.appendChild(label);
+    div.appendChild(br);
+}
+
+function listaNomesGorjeta() {
+    let div = document.getElementById('nomesParaGorjeta');
+    let aux = numPessoas - 1;
+    br = document.createElement('br');
+
+    let checkbox = document.createElement('input');
+
+    checkbox.type = 'checkbox';
+    checkbox.name = 'nome' + aux;
+    checkbox.value = pessoas[numPessoas-1].nome;
+    checkbox.classList.add('gorjeta');
+
+    let label = document.createElement('label');
+    label.htmlFor = 'nome' + aux;
+    label.appendChild(document.createTextNode(pessoas[numPessoas-1].nome));
+
+    div.appendChild(checkbox);
+    div.appendChild(label);
+    div.appendChild(br);
+}
+
+function limpaCampoNome() {
+    document.getElementById('nome').value = '';
+}
+
+function limpaCampoItem() {
+    document.getElementById('item').value = '';
+    document.getElementById('preco').value = '';
+
+    $('#nomesItens').each(function() {
+        if(this.checked) {
+            this.checked = false;
+        }
+    });
 }
 
 function adicionaGorjeta() {
