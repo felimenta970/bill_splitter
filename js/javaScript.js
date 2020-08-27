@@ -14,7 +14,7 @@ function adicionaPessoa() {
     pessoas.push(pessoa);
 
     listaNomesDiv();
-    listaNomes10pc();
+    listaNomesGorjeta();
 
     numPessoas++;
 
@@ -36,6 +36,30 @@ function novaPessoa () {
     button.innerHTML = "Adicionar";
 
     divGeral.appendChild(input);
+    divGeral.appendChild(button);
+    divGeral.appendChild(br);
+}
+
+function novoItem () {
+    let divGeral = document.querySelector('#novosItens');
+    let inputItem = document.createElement('input');
+    let inputPreco = document.createElement('input');
+
+    inputItem.setAttribute('type', 'text');
+    inputItem.setAttribute('id', 'item' + numItens);
+
+    inputPreco.setAttribute('type', 'number');
+    inputPreco.setAttribute('preco', 'preco' + numItens)
+
+    let button = document.createElement('button');
+
+    button.setAttribute('id', 'novoItem');
+    button.setAttribute('onclick', 'adicionarItem()');
+    let br = document.createElement('br');
+    button.innerHTML = "Adicionar";
+
+    divGeral.appendChild(inputItem);
+    divGeral.appendChild(inputPreco);
     divGeral.appendChild(button);
     divGeral.appendChild(br);
 }
@@ -62,8 +86,8 @@ function listaNomesDiv() {
     div.appendChild(br);
 }
 
-function listaNomes10pc() {
-    let div = document.getElementById('nomesPara10pc');
+function listaNomesGorjeta() {
+    let div = document.getElementById('nomesParaGorjeta');
     let aux = numPessoas - 1;
     br = document.createElement('br');
 
@@ -72,7 +96,7 @@ function listaNomes10pc() {
     checkbox.type = 'checkbox';
     checkbox.name = 'nome' + aux;
     checkbox.value = pessoas[numPessoas-1].nome;
-    checkbox.classList.add('10pc');
+    checkbox.classList.add('gorjeta');
 
     let label = document.createElement('label');
     label.htmlFor = 'nome' + aux;
@@ -115,13 +139,13 @@ function adicionarItem() {
     }
 }
 
-function adiciona10pc() {
+function adicionaGorjeta() {
 
     let cont = 0;
 
     let nomes = [];
 
-    $('.10pc').each(function() {
+    $('.gorjeta').each(function() {
         if (this.checked) {
             cont++;
             nomes.push(this.value);
@@ -142,5 +166,5 @@ function adiciona10pc() {
 }
 
 function divisorConta() {
-    adiciona10pc();
+    adicionaGorjeta();
 }
