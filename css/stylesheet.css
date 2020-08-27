@@ -1,0 +1,41 @@
+td { 
+    padding: 10px;
+}
+
+h1 {
+    margin-top: 2rem;
+}
+
+button {
+    background-color: white;
+    border: 1.5px slateblue solid;
+    border-radius: 7px;
+    color: slateblue;
+}
+
+input {
+    background-color: white;
+    border: 1.5px rgb(146, 133, 231) solid;
+    border-radius: 7px;
+    color: slateblue;
+}
+
+input:active {
+    border: 1.5px slateblue solid;
+}
+
+body {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.box {
+    background-color: white;
+    border: 1.5px rgb(146, 133, 231) solid;
+    border-radius: 7px;
+    padding: 50px 0px;
+    width: 40%;
+    margin: 0 auto;
+}
