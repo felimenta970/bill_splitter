@@ -13,12 +13,11 @@ function adicionaPessoa() {
 
     pessoas.push(pessoa);
 
-    listaNomes();
+    listaNomesDiv();
+    listaNomes10pc();
 
     numPessoas++;
 
-    console.log(pessoas);
-    console.log(numPessoas);
 
 }
 
@@ -41,7 +40,8 @@ function novaPessoa () {
     divGeral.appendChild(br);
 }
 
-function listaNomes() {
+function listaNomesDiv() {
+
     let div = document.getElementById('nomesParaItens');
     let aux = numPessoas - 1;
     br = document.createElement('br');
@@ -56,6 +56,28 @@ function listaNomes() {
     let label = document.createElement('label');
     label.htmlFor = 'nome' + aux;
     label.appendChild(document.createTextNode(pessoas[numPessoas-1].nome));
+
+    div.appendChild(checkbox);
+    div.appendChild(label);
+    div.appendChild(br);
+}
+
+function listaNomes10pc() {
+    let div = document.getElementById('nomesPara10pc');
+    let aux = numPessoas - 1;
+    br = document.createElement('br');
+
+    let checkbox = document.createElement('input');
+
+    checkbox.type = 'checkbox';
+    checkbox.name = 'nome' + aux;
+    checkbox.value = pessoas[numPessoas-1].nome;
+    checkbox.classList.add('10pc');
+
+    let label = document.createElement('label');
+    label.htmlFor = 'nome' + aux;
+    label.appendChild(document.createTextNode(pessoas[numPessoas-1].nome));
+
     div.appendChild(checkbox);
     div.appendChild(label);
     div.appendChild(br);
@@ -75,7 +97,7 @@ function adicionarItem() {
     itens.push(item);
 
 
-    $('input[type=checkbox]').each(function() {
+    $('input[type=checkbox').each(function() {
         if (this.checked) {
             cont++;
             nomes.push(this.value);
@@ -93,6 +115,32 @@ function adicionarItem() {
     }
 }
 
-function divisorConta() {
+function adiciona10pc() {
 
+    let cont = 0;
+
+    let nomes = [];
+
+    $('.10pc').each(function() {
+        if (this.checked) {
+            cont++;
+            nomes.push(this.value);
+        }
+    });
+
+    for (let i = 0; i < nomes.length; i++) {
+        for (let j = 0; j < pessoas.length; j++) {
+            if (nomes[i] === pessoas[j].nome) {
+                pessoas[j].conta = pessoas[j].conta*1.1;
+            }
+        }
+    }
+
+    console.log(nomes);
+
+    console.log(pessoas);
+}
+
+function divisorConta() {
+    adiciona10pc();
 }
