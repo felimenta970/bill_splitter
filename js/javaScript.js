@@ -7,7 +7,7 @@ function adicionaPessoa() {
 
 
     let pessoa = {
-        nome: document.getElementById('nome' + numPessoas).value,
+        nome: document.getElementById('nome').value,
         conta: 0,
     };
 
@@ -18,50 +18,16 @@ function adicionaPessoa() {
 
     numPessoas++;
 
+    $('#sucessoPessoa').empty();
 
-}
+    let div = document.getElementById('sucessoPessoa');
+    let aviso = document.createElement('p');
+    
+    aviso.innerHTML = pessoa.nome + " adicionado com sucesso!";
 
-function novaPessoa () {
-    let divGeral = document.querySelector('#novasPessoas');
-    let input = document.createElement('input');
+    div.appendChild(aviso);
 
-    input.setAttribute('type', 'text');
-    input.setAttribute('id', 'nome' + numPessoas);
 
-    let button = document.createElement('button');
-
-    button.setAttribute('id', 'novaPessoa');
-    button.setAttribute('onclick', 'adicionaPessoa()');
-    let br = document.createElement('br');
-    button.innerHTML = "Adicionar";
-
-    divGeral.appendChild(input);
-    divGeral.appendChild(button);
-    divGeral.appendChild(br);
-}
-
-function novoItem () {
-    let divGeral = document.querySelector('#novosItens');
-    let inputItem = document.createElement('input');
-    let inputPreco = document.createElement('input');
-
-    inputItem.setAttribute('type', 'text');
-    inputItem.setAttribute('id', 'item' + numItens);
-
-    inputPreco.setAttribute('type', 'number');
-    inputPreco.setAttribute('preco', 'preco' + numItens)
-
-    let button = document.createElement('button');
-
-    button.setAttribute('id', 'novoItem');
-    button.setAttribute('onclick', 'adicionarItem()');
-    let br = document.createElement('br');
-    button.innerHTML = "Adicionar";
-
-    divGeral.appendChild(inputItem);
-    divGeral.appendChild(inputPreco);
-    divGeral.appendChild(button);
-    divGeral.appendChild(br);
 }
 
 function listaNomesDiv() {
@@ -112,7 +78,7 @@ function adicionarItem() {
     let cont = 0;
 
     let item = {
-        nome: document.getElementById('item' + numItens).value,
+        nome: document.getElementById('item').value,
         valor: document.getElementById('preco' + numItens).value
     }
 
@@ -137,6 +103,15 @@ function adicionarItem() {
             }
         }
     }
+
+    $('#sucessoItem').empty();
+
+    let div = document.getElementById('sucessoItem');
+    let aviso = document.createElement('p');
+    
+    aviso.innerHTML = item.nome + " adicionado com sucesso!";
+
+    div.appendChild(aviso);
 }
 
 function adicionaGorjeta() {
@@ -167,4 +142,6 @@ function adicionaGorjeta() {
 
 function divisorConta() {
     adicionaGorjeta();
+
+
 }
