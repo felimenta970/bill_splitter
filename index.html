@@ -20,7 +20,7 @@
         
 
         <h1>Divisor de conta</h1>
-
+        <!-- Div inicial para obtenção dos consumidores -->
         <div>
             <p>Quem consumiu?</p>
             <input type="text" id="nome" name="nome">&nbsp;&nbsp;
@@ -36,6 +36,7 @@
         <br>
         <br>
 
+        <!-- Div para obtermos os itens consumidos e seus valores-->
         <div>
             <p>O que será dividido, qual o valor e por quem?</p>
             <div id="itens">
@@ -46,6 +47,7 @@
                 &nbsp;&nbsp;
                 <button id="adicionarItem" onclick="adicionarItem()">Adicionar</button>
                 <br>
+                <!-- Espaço para os nomes obtidos -->
                 <div class="nomes">
 
                     <div id="nomesParaItens">
@@ -67,6 +69,7 @@
             </div>
         </div>
         <br>
+        <!-- Gorgeta -->
         <div>
             <br>
             <p>Alguém vai pagar a gorgeta?</p>
@@ -77,6 +80,7 @@
         <br>
         <button id="calculaConta" class="final" onclick="divisorConta()">Calcular valores</button>
         <hr>
+        <!-- Valores finais de pagamento -->
         <div id="resultados">
 
         </div>
