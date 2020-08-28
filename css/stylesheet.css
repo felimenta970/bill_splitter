@@ -6,26 +6,39 @@ h1 {
     margin-top: 2rem;
 }
 
-button {
+button, button:active, button:focus, button:hover {
     background-color: white;
-    border: 1.5px slateblue solid;
+    border: 2px rgb(86, 74, 167) solid;
     border-radius: 7px;
-    color: slateblue;
+    color: rgb(86, 74, 167);
+    text-transform: uppercase;
+    padding: 0.5rem;
+    font-weight: bold;
+    outline: none;
+}
+
+button.final {
+    background-color: rgb(86, 74, 167);
+    border: 2px rgb(86, 74, 167) solid;
+    border-radius: 7px;
+    color: white;
 }
 
 input {
     background-color: white;
-    border: 1.5px rgb(146, 133, 231) solid;
+    border: 2px rgb(146, 133, 231) solid;
     border-radius: 7px;
-    color: slateblue;
+    color: rgb(86, 74, 167);
+    padding: 0.5rem;
 }
 
-input:active {
-    border: 1.5px slateblue solid;
+input:active, input:focus {
+    border: 2px rgb(86, 74, 167) solid;
+    outline: none;
 }
 
 body {
-    text-align: center;
+    text-align: center !important;
     font-size: 1.3rem;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
@@ -38,4 +51,57 @@ body {
     padding: 50px 0px;
     width: 40%;
     margin: 0 auto;
+}
+
+input[type=checkbox] {
+    margin: 10px;
+    size: 50px;
+}
+
+div {
+    display: inline-block;
+}
+
+.aviso {
+    background-color: #d89f9f;
+    color: #500000;
+    border-radius: 7px;
+    border: 3px #500000 solid;
+    margin: 1rem;
+    padding: 1rem 0.6rem 0.4rem 0.6rem;
+}
+
+.sucesso {
+    background-color: #d2f5cc;
+    color: #008300;
+    border-radius: 7px;
+    border: 3px #008300 solid; 
+    margin: 1rem;
+    padding: 1rem 0.6rem 0.4rem 0.6rem;
+}
+
+input[type=checkbox]:checked {
+    background-color: rgb(146, 133, 231);
+}
+
+.valorConta, .nomeConta {
+    display: inline-block;
+}
+
+.nomes {
+    margin-top: 0.5rem;
+}
+
+#resultados{
+    margin: 0.5rem;
+}
+
+.nomeConta {
+    text-transform: uppercase;
+    color: rgb(86, 74, 167);
+    font-weight: bold;
+}
+
+.nomeConta, .valorConta {
+    font-size: 2rem;
 }

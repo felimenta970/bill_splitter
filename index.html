@@ -22,19 +22,22 @@
         <h1>Divisor de conta</h1>
 
         <div>
-            Quem vai dividir a conta?
+            <p>Quem consumiu?</p>
             <input type="text" id="nome" name="nome">&nbsp;&nbsp;
             <button id="adicionarPessoa" onclick="adicionaPessoa()">Adicionar</button>
-
-            <div id="sucessoPessoa">
+            <br>
+            <div class="avisoPessoa" id="avisoPessoa">
 
             </div>
-
+            <br>
             <button id="limpaNome" onclick="limpaCampoNome()">Nova Pessoa</button>
         </div>
 
+        <br>
+        <br>
+
         <div>
-            O que será dividido, qual o valor e por quem?
+            <p>O que será dividido, qual o valor e por quem?</p>
             <div id="itens">
 
                 <input type="text" id="item" name="item" placeholder="Consumo">
@@ -42,14 +45,20 @@
                 <input type="number" id="preco" name="preco" placeholder="00.00">
                 &nbsp;&nbsp;
                 <button id="adicionarItem" onclick="adicionarItem()">Adicionar</button>
+                <br>
+                <div class="nomes">
 
-                <div id="nomesParaItens">
+                    <div id="nomesParaItens">
+
+                    </div>
 
                 </div>
+                <br>
 
-                <div id="sucessoItem">
+                <div id="avisoItem">
 
                 </div>
+                <br>
 
                 <button id="limpaNome" onclick="limpaCampoItem()">Novo Consumo</button>
 
@@ -57,15 +66,23 @@
 
             </div>
         </div>
-
+        <br>
         <div>
-            Alguém vai pagar os 10%?
+            <br>
+            <p>Alguém vai pagar a gorgeta?</p>
             <div id="nomesParaGorjeta">
 
             </div>
         </div>
+        <br>
+        <button id="calculaConta" class="final" onclick="divisorConta()">Calcular valores</button>
+        <hr>
+        <div id="resultados">
 
-        <button id="calculaConta" onclick="divisorConta()">Calcular valores</button>
+        </div>
+        <br>
+        <br>
+        <br>
         
 
         <script src="js/javaScript.js"></script>
